@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="Portfolio.css">
+    <link rel="stylesheet" href="Portfolio.js">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+</head>
+<style>
+    *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+body{
+    color: #ededed;
+}
+.header{
+    position: fixed;
+    display:flex;
+    top:0;
+    left:0;
+    padding: 20px 10%;
+    background: transparent;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+.logo{
+    position: relative;
+    font-size: 25px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: default;
+    opacity: 0;
+    animation: slideRight 1s ease forwards;
+  
+}
+.navbar a{
+    display: inline-block;
+    font-size: 25px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 35px;
+    transition: .3s;
+    opacity: 0;
+    animation: slideTop  .5s ease forwards;
+}
+.navbar a:hover{
+    color: aqua;
+}
+.home{
+    position: relative;
+    width:100%;
+    justify-content: space-between;
+    height: 100vh;
+    background: url(Portfolio.png) no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    padding: 70px 10%;
+}
+.home-content{
+    max-width: 600px;
+
+}
+.home-content h3{
+    font-size: 32px;
+    font-weight: 700;
+    opacity: 0;
+    animation: slideBottom 1s ease forwards;
+    animation-delay: .7s;
+}
+.home-content h3 span{
+    color: aqua;
+}
+.home-content h3:nth-of-type(2){
+    margin-bottom: 30px;
+}
+.home-content h1{
+    font-size: 56px;
+    font-weight: 700;
+    margin: -3px 0;
+    opacity: 0;
+    animation: slideRight 1s ease forwards;
+    animation-delay: 1s;
+}
+.home-content p{
+    font-size: 20px;
+    opacity: 0;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: 1s;
+
+}
+.home-sci a{
+display: inline-flex;
+justify-content: center;
+align-items: center;
+width: 40px;
+height:40px;
+background: transparent;
+border:2px solid aqua;
+border-radius: 50%;
+font-size: 20px;
+color: aqua;
+text-decoration: none;
+margin: 30px 15px 30px 0px;
+}
+.home-sci a:hover{
+    background: aqua;
+    color: black;
+    box-shadow: 0 0 20px aqua;
+}
+.btn-box{
+    display: inline-block;
+    padding: 12px 20px;
+    background: aqua;
+    border-radius: 40px;
+    font-size: 16px;
+    color: black;
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-weight: 600;
+    box-shadow: 0 0 5px aqua,0 0 25px aqua ;
+}
+.btn-box:hover{
+    box-shadow: 0 0 5px aqua, 0 0 25px aqua, 0 0 50px aqua,0 0 100px aqua ;
+}
+
+.about{
+    
+    background-image: url(Portfolio2.png);
+    background-size: cover;
+       
+        height: 100vh;
+        position: relative;
+        
+        background-repeat: no-repeat;
+}
+.about-text{
+    padding-top: 5%;
+    margin-left: 35%;
+}
+.about-text h2{
+    font-size: 50px;
+
+}
+.about-text h2 span{
+    color:aqua
+    
+}
+.about-text h4{
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 1.7;
+    margin: 15px 0 30px;
+    
+}
+.about-text p{
+    font-size: 20px;
+    line-height: 1.4;
+    margin-bottom: 3rem;
+}
+.con_info{
+    background: url(Portfolio3.jpeg);
+}
+.contact{
+    
+    display:grid;
+    grid-template-columns: repeat(2,1fr);
+    align-items: center;
+    gap: 3rem;
+    padding-left: 30px;
+    
+}
+.contact-text{
+    margin-top: 130px;
+}
+.contact-text h2{
+    font-size: 90px;
+    line-height: 1;
+    text-align: center;
+}
+
+.contact-text h2 span{
+    color:aqua;
+}
+.contact-text h4{
+    margin: 15px 0;
+    color: rgb(228,228,228);
+    font-size: 20px;
+    font-weight: 600;
+}
+.contact-text p{
+    color:rgb(177, 177, 177);
+    font-size: 20px;
+    line-height: 30px;
+    margin-bottom: 2rem;
+}
+.contact-list{
+    margin-bottom: 3rem;
+}
+.contact-list li{
+    margin-bottom: 10px;
+    display: block;
+}
+.contact-list i{
+    display: inline-block;
+    color: aqua;
+    font-size: 20px;
+    font-weight: 600;
+    transition: all .40s ease ;
+}
+.contact-list li a:hover{
+    transform: scale(1.01) translateY(-5px);
+    color: aqua;
+}
+.contact-icons i{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height:40px;
+    background: transparent;
+    border: 2px solid aqua;
+    border-radius: 50%;
+    font-size: 20px;
+    color: aqua;
+    text-decoration: none;
+    margin: 30px 15px 30px 0;
+    transition: .5s ease;
+    opacity:0;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: calc(.2s* var(--i));
+}
+.contact-icons i:hover{
+    background: aqua;
+    color: black;
+    box-shadow: 0 0 20px aqua;
+}
+.contact-form{
+    position: relative;
+}
+.contact-form form input, form textarea{
+    border: none;
+    outline: none;
+    width: 90%;
+    padding: 18px;
+    background: #555557;
+    color: black;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    border-radius: 1.5rem;
+}
+.contact-form textarea{
+    resize: none;
+    height: 220px;
+}
+.contact-form form .send{
+    display: inline-block;
+    padding: 14px 40px;
+    background: aqua;
+    border-radius: 40px;
+    font-size: 18px;
+    color: black;
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-weight: 600;
+    opacity: 0;
+    animation: slideTop 1s ease forwards;
+    animation-delay: 2s;
+    box-shadow: 0 0 5px aqua, 0 0 25px aqua;
+}
+.contact-form form .send:hover{
+    box-shadow: 0 0 5px aqua, 0 0 25px aqua, 0 0 50px aqua,0 0 100px aqua , 0 0 200px aqua;
+}
+.last-text p{
+    width: 100%;
+    text-align: center;
+    padding: 25px 0;
+    background: rgb(7,85,91);
+    font-weight: 300;
+    margin-top: 70px;
+}
+
+@keyframes slideRight{
+    0%{
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes slideTop{
+    0%{
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes slideLeft{
+    0%{
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes slideBottom{
+    0%{
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+
+</style>
+<body>
+    <header class="header">
+        <a href="#" class="logo">Portfolio.</a>
+
+        <nav class="navbar">
+            <a href="#" >Home</a>
+            <a href="#" >About</a>
+            <a href="#" >Services</a>
+            <a href="#" >Skills</a>
+            <a href="#" >Contact</a>
+        </nav>
+    </header>
+    <section class="home">
+        <div class="home-content">
+            <h3>Hello, It's Me</h3>
+            <h1>Robert Downey</h1>
+            <h3>And I'm a <span class="text">Frontend Developer</span></h3>
+            <p>I'm a Web Developer with extensive experience for over 3 years.
+                <br>expertise is to create and website design, Frontend design, and many more...</p>
+            <div class="home-sci">
+                <a href="#"><i class='bx bxl-facebook'></i></a>
+                <a href="#"><i class='bx bxl-instagram' ></i></a>
+                <a href="#"><i class='bx bxl-whatsapp' ></i></a>
+                <a href="#"><i class='bx bxl-tiktok' ></i></a>
+            </div>
+            <a href="#" class="btn-box">More About Me</a>
+        </div>
+
+    </section>
+
+    <section class="about" id="about">
+        <div class="about-text">
+            <h2>About<span>Me</span></h2>
+            <h4>Frontend Developer</h4>
+            <p>Since beginning my journey as a freelance designer over 11 years ago, 
+                I've done remote work for agencies, consulted for startups, and collaborated 
+                with talented people to create digital products for both business and consumer use. 
+                I'm quietly confident, naturally curious, and perpetually working on improving my chops one design problem at a time.
+                The primary responsibility of a front end developer is to combine programming technology and design to produce 
+                an appealing user interface (UI) for a website or web application that is simple to use. 
+                Front end developers must be good communicators to understand the objectives of their clients to operate effectively. 
+                To ensure how the code strings affect the design, front end engineers frequently work with other IT experts, such as web developers.
+                I like to code things from scratch, and enjoy bringing ideas to life in the browser.</p>
+
+                <a href="#" class="btn-box">More About Me</a>
+        </div>
+    </section>
+    <section class="con_info">
+        <section class="contact" id="contact">
+            <div class="contact-text">
+                <h2>Contact <span>Me</span></h2>
+                <h4>Let's work together</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium minus tenetur deleniti fuga accusamus eaque, qui facere voluptatum doloremque quaerat cum est! Necessitatibus laboriosam delectus in a veniam, placeat quidem?</p>
+                    <div class="contact-list">
+                        <li><i class='bx bxs-send' ></i>contact@gmail.com</li>
+                        <li><i class='bx bxs-phone' ></i>7499135493</li>
+                    </div>
+                    <div class="contact-icons">
+                        <a href=""><i class='bx bxl-facebook-circle' style='color:aqua'></i></a>
+                        <a href=""><i class='bx bxl-twitter' style='color:aqua'></i></a>
+                        <a href=""><i class='bx bxl-instagram' style='color:aqua'></i></a>
+                        <a href=""><i class='bx bxl-linkedin' style='color:aqua'></i></a>
+                    </div>
+            </div>
+            <div class="contact-form">
+                <form action="">
+                    <input type="" placeholder="Enter Your Name" required>
+                    <input type="email" placeholder="Enter Your Email" required>
+                    <input type="" placeholder="Enter Your Subject" >
+                    <textarea name="" id="" cols="40" rows="10" placeholder="Enter Your Message"></textarea>
+                    <input type="submit" value="Submit" class="send">
+                </form>
+            </div>
+        </section>
+        <div class="last-text">
+            <p>Developed by Hemant Fegade </p>
+        </div>
+    </section>
+    <script src="Portfolio.js"></script>
+</body>
+</html>
